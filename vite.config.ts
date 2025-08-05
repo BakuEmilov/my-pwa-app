@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { VitePWA, type ManifestOptions } from "vite-plugin-pwa";
+import tailwindcss from "@tailwindcss/vite";
 
 const manifest: Partial<ManifestOptions> = {
   theme_color: "#000000",
@@ -44,6 +45,7 @@ const manifest: Partial<ManifestOptions> = {
 export default defineConfig({
   plugins: [
     react(),
+    tailwindcss(),
     VitePWA({
       registerType: "autoUpdate",
       workbox: {
